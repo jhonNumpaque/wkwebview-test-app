@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      WK Test
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>XHR Origin</ion-card-header>
+    <ion-card-content>
+      Origin: {{origin}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>XHR POST HTTP</ion-card-header>
+    <ion-card-content>
+      {{test.POST_HTTP}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>XHR POST HTTPS</ion-card-header>
+    <ion-card-content>
+      {{test.POST_HTTPS}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>XHR GET bundle text file</ion-card-header>
+    <ion-card-content>
+      {{test.GET_bundle_text}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>XHR GET bundle binary file</ion-card-header>
+    <ion-card-content>
+      (image should load from XHR encoded in base64)
+      <img [src]="base64bundleImage"/>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>XHR GET outside bundle</ion-card-header>
+    <ion-card-content>
+      {{test.GET_outside_text}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Image from app bundle</ion-card-header>
+    <ion-card-content>
+      <img src="assets/image.jpg"/>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Video from app bundle</ion-card-header>
+    <ion-card-content>
+      <video width="100%" src="assets/video.mp4" controls></video>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Image from outside bundle</ion-card-header>
+    <ion-card-content>
+      <img [src]="imageOutsideBundle"/>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>HTTP image</ion-card-header>
+    <ion-card-content>
+      <img src="http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg"/>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>HTTPS video</ion-card-header>
+    <ion-card-content>
+      <video controls width="100%" src="https://cochrane.media.prod.86degrees.com/video/4/Product_AntiStampede.mp4"></video>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>iframe</ion-card-header>
+    <ion-card-content>
+      <iframe src="https://www.w3schools.com"></iframe>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
