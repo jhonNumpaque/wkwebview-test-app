@@ -6,6 +6,7 @@ import { File, StatusBar, Splashscreen } from 'ionic-native';
 import { NavController, Platform } from 'ionic-angular';
 
 declare var cordova: any;
+declare var window: any;
 
 
 @Component({
@@ -122,12 +123,12 @@ export class HomePage {
   }
 
   testOutsideAssert_2() {
-    this.imageOutsideBundle = convertURL(this.fileSystem + 'image2.jpg');
+    this.imageOutsideBundle = window.wkRewriteURL(this.fileSystem + 'image2.jpg');
     console.log("imageOutsideBundle:", this.imageOutsideBundle);
   }
 
   testXHROutsideTest_2() {
-    this.http.get(convertURL(this.fileSystem+'data.json'))
+    this.http.get(window.wkRewriteURL(this.fileSystem+'data.json'))
       .subscribe(res => {
         console.log("testXHROutsideTest_2:", res);
         this.test['GET_outside_text'] = 'Fails';
@@ -165,7 +166,6 @@ export class HomePage {
         var urlCreator = window.URL || window['webkitURL'];
         var url = urlCreator.createObjectURL(res.blob());
         this.base64bundleImage = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-
     })
   }
 
@@ -179,8 +179,4 @@ export class HomePage {
       });
   }
 
-}
-
-function convertURL(path: string) {
-  return window.location.origin + path.replace('file:///', '/').replace('file://', '/');
 }

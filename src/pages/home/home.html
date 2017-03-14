@@ -40,6 +40,7 @@
     <ion-card-content>
       (image should load from XHR encoded in base64)
       <img [src]="base64bundleImage"/>
+      <p>src={{base64bundleImage}}</p>
     </ion-card-content>
   </ion-card>
 
@@ -54,6 +55,7 @@
     <ion-card-header>Image from app bundle</ion-card-header>
     <ion-card-content>
       <img src="assets/image.jpg"/>
+      <p>src=assets/image.jpg</p>
     </ion-card-content>
   </ion-card>
 
@@ -61,6 +63,7 @@
     <ion-card-header>Video from app bundle</ion-card-header>
     <ion-card-content>
       <video width="100%" src="assets/video.mp4" controls></video>
+      <p>src=assets/video.mp4</p>
     </ion-card-content>
   </ion-card>
 
@@ -68,6 +71,7 @@
     <ion-card-header>Image from outside bundle</ion-card-header>
     <ion-card-content>
       <img [src]="imageOutsideBundle"/>
+      <p>src={{imageOutsideBundle}}</p>
     </ion-card-content>
   </ion-card>
 
@@ -75,6 +79,7 @@
     <ion-card-header>HTTP image</ion-card-header>
     <ion-card-content>
       <img src="http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg"/>
+      <p>src=http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg</p>
     </ion-card-content>
   </ion-card>
 
@@ -82,6 +87,7 @@
     <ion-card-header>HTTPS video</ion-card-header>
     <ion-card-content>
       <video controls width="100%" src="https://cochrane.media.prod.86degrees.com/video/4/Product_AntiStampede.mp4"></video>
+      <p>src=https://cochrane.media.prod.86degrees.com/video/4/Product_AntiStampede.mp4</p>
     </ion-card-content>
   </ion-card>
 
@@ -89,6 +95,7 @@
     <ion-card-header>iframe</ion-card-header>
     <ion-card-content>
       <iframe src="https://www.w3schools.com"></iframe>
+      <p>src=https://www.w3schools.com</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
